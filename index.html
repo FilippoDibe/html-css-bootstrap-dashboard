@@ -1,0 +1,860 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">    
+    <title>Bootstrap dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- nav bar inziale lunga con barra di ricerca  -->
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div class="nav-section position-fixed top-0 d-flex flex-row">
+                <div class="logo col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1">
+                    <div class="logo-desk d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block col-lg-2 col-xl-2 col-xxl-2">
+                        <img src="img/logo.svg" alt="">
+                    </div>
+                    <div class="logo-mobile d-block d-sm-block d-md-block d-lg-none d-xl-none d-xxl-none col-1 col-sm-1 col-md-1">
+                        <img src="img/mobile-logo.png" alt="">
+                    </div>
+                </div>
+                <div class="ricerca col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" placeholder=" Prova a cercare: Lezioni di laravel" aria-label="search">
+                </div>
+                <div class="icon-nav col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1">
+                    <div class="icone-desk-nav d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block">
+                        <div class="d-flex flex-row lista-icone-navdesk">
+                            <!-- quattro ione della modalita desktop -->
+                            <a href="#"><i class="fa-solid fa-list-ul"></i></a>
+                            <a href="#"><i class="fa-regular fa-circle-question"></i></a>
+                            <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                            <!-- dropdown campana -->
+                            <a href="">
+                                <div class="dropdown">
+                                    <i class="fa-solid fa-bell" data-bs-toggle="dropdown"></i>
+                                    <ul class="dropdown-menu">
+                                        <li><button class="dropdown-item" type="button">Profilo</button></li>
+                                        <li><button class="dropdown-item" type="button">Fatturazione</button></li>
+                                        <li><button class="dropdown-item" type="button">Logout</button></li>                             
+                                    </ul>
+                                </div>
+                            </a>
+                        </div>
+                        
+                    </div>
+                    <div class="icon-mobile-nav d-block d-sm-block d-md-block d-lg-none d-xl-none d-xxl-none ">
+                        <!-- bell doro che ha il dropdwon  -->
+                        <a href="">
+                            <div class="dropdown">
+                                <i class="fa-solid fa-bell" data-bs-toggle="dropdown"></i>
+                                <ul class="dropdown-menu">
+                                    <li><button class="dropdown-item" type="button">Profilo</button></li>
+                                    <li><button class="dropdown-item" type="button">Fatturazione</button></li>
+                                    <li><button class="dropdown-item" type="button">Logout</button></li>                             
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="container-fluid" style="margin-top: 9vh;">
+            <!-- sidebar laterale con incone  -->
+            <div class="row">
+                <div class="sidebar col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 position-fixed">
+                    <!-- contenitore che flexa i due item di icone  -->
+                    <div class="sidebar-container">
+                        <!-- contenitore gia responsive con le prime 3 icone  -->
+                        <div class="icon-start">
+                            <!-- modalita desktop  -->
+                            <div class="icon-start-desk d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block">
+                                <ul class="lista-sidebar">
+                                    <li>
+                                        <!-- icona di font  --> 
+                                        <i class="fa-solid fa-house"></i>
+                                        <h6>Home</h6>
+                                    </li>
+                                    <li>
+                                        <!-- icona di font  -->
+                                        <i class="fa-solid fa-chart-simple"></i>
+                                        <h6> Stats</h6>
+                                    </li>
+                                    <li>
+                                        <!-- icona di font  -->
+                                        <i class="fa-solid fa-signal"></i>
+                                        <h6>Signals</h6>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="icon-start-mobile d-block d-sm-block d-md-block d-lg-none d-xl-none d-xxl-none">
+                                <ul class="mobile-list-icon">
+                                    <li>
+                                        <!-- icona di font  -->
+                                        <i class="fa-solid fa-house"></i>
+                                    </li>
+                                    <li>
+                                        <!-- icona di font -->
+                                        <i class="fa-solid fa-chart-simple"></i>
+
+                                    </li>
+                                    <li>
+                                        <!-- icona di font  -->
+                                        <i class="fa-solid fa-signal"></i>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="icon-end">
+                            <!-- icona di font  -->
+                            <i class="fa-solid fa-gear"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- cntenitore del main  -->
+                <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 col-xxl-11" style="margin-left: 8vw;">
+                    <div class="row">
+                        <!-- parte inalto blu  -->
+                        <div class="intro-section-blue col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                            <div class="d-none d-sm-none d-md-block d-lg-block d-xl-blocl d-xxl-block ">
+                                <div class="intro-desk ">
+                                    <div class="info-1">
+                                        <!-- titolo boolean con i bottoni  -->
+                                        <div class="blocco-1">
+                                            <h1>Boolean</h1>
+                                            <span class="buttone-fake">
+                                                <a href="#">Piano blaze</a>
+                                            </span>
+                                        </div>
+                                        <div class="blocco-2">
+                                            <span class="buttone-fake">
+                                                <a href="#">3 app</a>
+                                            </span>
+                                            <span id="frecce">>></span>
+                                            <span class="buttone-fake">
+                                                <a href="#">Boolean mobile app</a>
+                                            </span>
+                                            <span class="buttone-fake">
+                                                <a href="#">Boolean web app</a>
+                                            </span>
+                                            <span class="buttone-fake">
+                                                <a href="#">Boolean blog app</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="info-2">
+                                        <!-- studenti online 125  -->
+                                        <div class="blocco-studenti">
+                                            <h6>Studenti online negli ultimi 30 minuti</h6>
+                                            <h4>125</h4>
+                                        </div>
+                                    </div>
+                                    <div class="info-3">
+                                        <!-- nuovo studente e bottone -->
+                                        <div class="new-student-blocco">
+                                            <h6>Nuovo studente</h6>
+                                            <button class="btn plus" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-plus"></i></button>
+                                            <div class="d-none d-sm-none d-md-block d-lg-block d-xl-block d-xxl-block">
+                                                <div class="offcanvas offcanvas-end" style="width: 50%;" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                                                    <div class="offcanvas-header" >
+                                                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Inserisci un nuovo studente</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="offcanvas-body">
+                                                        <form class="row">
+                                                            <div class="col-md-6">
+                                                                <label for="inputEmail4" class="form-label">Nome</label>
+                                                                <input type="email" class="form-control" id="inputEmail4">
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="inputEmail4" class="form-label">Cognome</label>
+                                                                <input type="email" class="form-control" id="inputEmail4">
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="inputPassword4" class="form-label">Email</label>
+                                                                <div class="input-group">
+                                                                  <div class="input-group-text">@</div>
+                                                                  <input type="text" class="form-control" id="autoSizingInputGroup">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="inputPassword4" class="form-label">Password</label>
+                                                                <input type="password" class="form-control" id="inputPassword4">
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <label for="inputAddress" class="form-label">Indirizzo</label>
+                                                                <input type="text" class="form-control" id="inputAddress">
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="inputCity" class="form-label">Citta</label>
+                                                                <input type="text" class="form-control" id="inputCity">
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label for="inputState" class="form-label">Stato</label>
+                                                                <select id="inputState" class="form-select">
+                                                                    <option selected>Choose...</option>
+                                                                    <option>...</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <label for="inputZip" class="form-label">Cap</label>
+                                                                <input type="text" class="form-control" id="inputZip">
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                                                    <label class="form-check-label" for="gridCheck">
+                                                                        Seleziona per proseguire
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <button type="submit" class="btn btn-primary">Salva</button>
+                                                                <button type="button" class="btn btn-warning">Svuota</button>
+                                                            </div>
+                                                      </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <div class="offcanvas offcanvas-end"  tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                                                    <div class="offcanvas-header" >
+                                                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Inserisci un nuovo studente</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                                    </div>
+                                                        <div class="offcanvas-body">
+                                                            <form class="row">
+                                                                <div class="col-md-6">
+                                                                    <label for="inputEmail4" class="form-label">Nome</label>
+                                                                    <input type="email" class="form-control" id="inputEmail4">
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label for="inputEmail4" class="form-label">Cognome</label>
+                                                                    <input type="email" class="form-control" id="inputEmail4">
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label for="inputPassword4" class="form-label">Email</label>
+                                                                    <div class="input-group">
+                                                                    <div class="input-group-text">@</div>
+                                                                    <input type="text" class="form-control" id="autoSizingInputGroup">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label for="inputPassword4" class="form-label">Password</label>
+                                                                    <input type="password" class="form-control" id="inputPassword4">
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <label for="inputAddress" class="form-label">Indirizzo</label>
+                                                                    <input type="text" class="form-control" id="inputAddress">
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label for="inputCity" class="form-label">Citta</label>
+                                                                    <input type="text" class="form-control" id="inputCity">
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <label for="inputState" class="form-label">Stato</label>
+                                                                    <select id="inputState" class="form-select">
+                                                                        <option selected>Choose...</option>
+                                                                        <option>...</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <label for="inputZip" class="form-label">Cap</label>
+                                                                    <input type="text" class="form-control" id="inputZip">
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                                                                        <label class="form-check-label" for="gridCheck">
+                                                                            Seleziona per proseguire
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <button type="submit" class="btn btn-primary">Salva</button>
+                                                                    <button type="button" class="btn btn-warning">Svuota</button>
+                                                                </div>
+                                                        </form>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="intro-mobile d-block d-sm-block d-md-none d-lg-none d-xl-none d-xxl-none">
+                                <div class="mobile-info-1">
+                                    <!-- nuovo studente e bottone  -->
+                                    <div class="new-student-blocco">
+                                        <h6>Nuovo studente</h6>
+                                        <button class="btn plus" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-plus"></i></button>
+                                      
+                                            <div class="offcanvas offcanvas-end mobile-version-form"  tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                                                <div class="offcanvas-header" >
+                                                    <h5 class="offcanvas-title" id="offcanvasRightLabel">Inserisci un nuovo studente</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                                </div>
+                                                <div class="offcanvas-body">
+                                                    <form class="row">
+                                                        <div class="col-md-6">
+                                                            <label for="inputEmail4" class="form-label">Nome</label>
+                                                            <input type="email" class="form-control" id="inputEmail4">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="inputEmail4" class="form-label">Cognome</label>
+                                                            <input type="email" class="form-control" id="inputEmail4">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="inputPassword4" class="form-label">Email</label>
+                                                            <div class="input-group">
+                                                              <div class="input-group-text">@</div>
+                                                              <input type="text" class="form-control" id="autoSizingInputGroup">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="inputPassword4" class="form-label">Password</label>
+                                                            <input type="password" class="form-control" id="inputPassword4">
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <label for="inputAddress" class="form-label">Indirizzo</label>
+                                                            <input type="text" class="form-control" id="inputAddress">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="inputCity" class="form-label">Citta</label>
+                                                            <input type="text" class="form-control" id="inputCity">
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <label for="inputState" class="form-label">Stato</label>
+                                                            <select id="inputState" class="form-select">
+                                                                <option selected>Choose...</option>
+                                                                <option>...</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <label for="inputZip" class="form-label">Cap</label>
+                                                            <input type="text" class="form-control" id="inputZip">
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                                                <label class="form-check-label" for="gridCheck">
+                                                                    Seleziona per proseguire
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <button type="submit" class="btn btn-primary">Salva</button>
+                                                            <button type="button" class="btn btn-warning">Svuota</button>
+                                                        </div>
+                                                  </form>
+                                                </div>
+                                            </div>
+                                    
+                                </div>
+                                <div class="mobile-info-2">
+                                    <!-- titolo boolean con i bottoni  -->
+                                    <div class="info-1">
+                                        <!-- titolo boolean con i bottoni  -->
+                                        <div class="blocco-1">
+                                            <h1>Boolean</h1>
+                                            <span class="buttone-fake">
+                                                <a href="#">Piano blaze</a>
+                                            </span>
+                                        </div>
+                                        <div class="blocco-2" style="padding-bottom: 20px;">
+                                            <span class="buttone-fake">
+                                                <a href="#">3 app</a>
+                                            </span>
+                                            <span id="frecce">>></span>
+                                            <span class="buttone-fake">
+                                                <a href="#">+</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mobile-info-3">
+                                    <!-- studneti online 125 -->
+                                    <div class="blocco-studenti">
+                                        <h6>Studenti online negli ultimi 30 minuti</h6>
+                                        <h4>125</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- main principale con le sezioni  -->
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9">
+                            <div class="card-principal col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                                <div class="titolo-card col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                                    <!-- titolo delle card del main  -->
+                                    <h3>Prossime classi</h3>
+                                </div>
+                                <div class="tabella-classi-desk d-none d-sm-none d-md-block d-lg-block d-xl-block d-xxl-block">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col titolo-riga-tabella">
+                                                    Nome
+                                                </th>
+                                                <th scope="col titolo-riga-tabella">
+                                                    Data inizio
+                                                </th>
+                                                <th scope="col titolo-riga-tabella">
+                                                    ROI
+                                                </th>
+                                                <th scope="col titolo-riga-tabella">
+                                                    Stato
+                                                </th>
+                                                <th scope="col titolo-riga-tabella" id="azioni">
+                                                    Azioni
+                                                </th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="thover">
+                                                <td class="colonna-nome">
+                                                    <img src="img/class-avatar.jpg" alt="">
+                                                    <h6>classe 75</h6>
+                                                </td>
+                                                <td class="colonna-data">
+                                                    <h6> 15 Feb 2021</h6>
+                                                </td>
+                                                <td class="colonna-roi">
+                                                    <h6>20%</h6>
+                                                </td>
+                                                <td class="colonna-stato">
+                                                    <button type="button" class="btn btn-success">Done</button>
+                            
+                                                </td>
+                                                <td class="colonna-azioni">
+                                                        <div class="conteinre-bottoni-azioni">
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="thover">
+                                                    <td class="colonna-nome">
+                                                        <img src="img/class-avatar.jpg" alt="">
+                                                        <h6>classe 76</h6>
+                                                    </td>
+                                                    <td class="colonna-data">
+                                                        <h6> 16 Feb 2021</h6>
+                                                    </td>
+                                                    <td class="colonna-roi">
+                                                        <h6>20%</h6>
+                                                    </td>
+                                                    <td class="colonna-stato">
+                                                        <button type="button" class="btn btn-success">Done</button>
+                                                    </td>
+                                                    <td class="colonna-azioni">
+                                                        <div class="conteinre-bottoni-azioni">
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="thover">
+                                                    <td class="colonna-nome">
+                                                        <img src="img/class-avatar.jpg" alt="">
+                                                        <h6>classe 77</h6>
+                                                    </td>
+                                                    <td class="colonna-data">
+                                                        <h6> 17 Feb 2021</h6>
+                                                    </td>
+                                                    <td class="colonna-roi">
+                                                        <h6>20%</h6>
+                                                    </td>
+                                                    <td class="colonna-stato">
+                                                        <button type="button" class="btn btn-warning" id="process">process</button>
+                            
+                                                    </td>
+                                                    <td class="colonna-azioni">
+                                                        <div class="conteinre-bottoni-azioni">
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="thover">
+                                                    <td class="colonna-nome">
+                                                        <img src="img/class-avatar.jpg" alt="">
+                                                        <h6>classe 78</h6>
+                                                    </td>
+                                                    <td class="colonna-data">
+                                                        <h6> 18 Feb 2021</h6>
+                                                    </td>
+                                                    <td class="colonna-roi">
+                                                        <h6>20%</h6>
+                                                    </td>
+                                                    <td class="colonna-stato">
+                                                        <button type="button" class="btn btn-success">Done</button>
+                            
+                                                    </td>
+                                                    <td class="colonna-azioni">
+                                                        <div class="conteinre-bottoni-azioni">
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="thover">
+                                                    <td class="colonna-nome">
+                                                        <img src="img/class-avatar.jpg" alt="">
+                                                        <h6>classe 79</h6>
+                                                    </td>
+                                                    <td class="colonna-data">
+                                                        <h6> 19 Feb 2021</h6>
+                                                    </td>
+                                                    <td class="colonna-roi">
+                                                        <h6>20%</h6>
+                                                    </td>
+                                                    <td class="colonna-stato">
+                                                        <button type="button" class="btn btn-danger">failed</button>
+                            
+                                                    </td>
+                                                    <td class="colonna-azioni">
+                                                        <div class="conteinre-bottoni-azioni">
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="thover">
+                                                    <td class="colonna-nome">
+                                                        <img src="img/class-avatar.jpg" alt="">
+                                                        <h6>classe 80</h6>
+                                                    </td>
+                                                    <td class="colonna-data">
+                                                        <h6> 20 Feb 2021</h6>
+                                                    </td>
+                                                    <td class="colonna-roi">
+                                                        <h6>20%</h6>
+                                                    </td>
+                                                    <td class="colonna-stato">
+                                                        <button type="button" class="btn btn-success">Done</button>
+                                                    </td>
+                                                    <td class="colonna-azioni">
+                                                        <div class="conteinre-bottoni-azioni">
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="thover">
+                                                    <td class="colonna-nome">
+                                                        <img src="img/class-avatar.jpg" alt="">
+                                                        <h6>classe 81</h6>
+                                                    </td>
+                                                    <td class="colonna-data">
+                                                        <h6>21 Feb 2021</h6>
+                                                    </td>
+                                                    <td class="colonna-roi">
+                                                        <h6>20%</h6>
+                                                    </td>
+                                                    <td class="colonna-stato">
+                                                        <button type="button" class="btn btn-danger">failed</button>
+                            
+                                                    </td>
+                                                    <td class="colonna-azioni">
+                                                        <div class="conteinre-bottoni-azioni">
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="thover">
+                                                    <td class="colonna-nome">
+                                                        <img src="img/class-avatar.jpg" alt="">
+                                                        <h6>classe 82</h6>
+                                                    </td>
+                                                    <td class="colonna-data">
+                                                        <h6> 22 Feb 2021</h6>
+                                                    </td>
+                                                    <td class="colonna-roi">
+                                                        <h6>20%</h6>
+                                                    </td>
+                                                    <td class="colonna-stato">
+                                                        <button type="button" class="btn btn-success">Done</button>
+                            
+                                                    </td>
+                                                    <td class="colonna-azioni">
+                                                        <div class="conteinre-bottoni-azioni">
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                        
+                                        </tbody>
+                                        </div>
+                                    </table>
+                                </div>
+                                <div class="tabella-classi-mobile d-block d-sm-block d-md-none d-lg-none d-xl-none d-xxl-none">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col titolo-riga-tabella">
+                                                    Nome
+                                                </th>
+                                                <th scope="col titolo-riga-tabella">
+                                                    Stato
+                                                </th>
+                                                <th scope="col titolo-riga-tabella" id="azioni">
+                                                    Azioni
+                                                </th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="thover">
+                                                <td class="colonna-nome">
+                                                    <img src="img/class-avatar.jpg" alt="">
+                                                    <h6>classe 75</h6>
+                                                </td>
+                                                <td class="colonna-stato">
+                                                    <button type="button" class="btn btn-success">Done</button>
+                            
+                                                </td>
+                                                <td class="colonna-azioni">
+                                                        <div class="conteinre-bottoni-azioni">
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="thover">
+                                                    <td class="colonna-nome">
+                                                        <img src="img/class-avatar.jpg" alt="">
+                                                        <h6>classe 76</h6>
+                                                    </td>
+                                                    <td class="colonna-stato">
+                                                        <button type="button" class="btn btn-success">Done</button>
+                                                    </td>
+                                                    <td class="colonna-azioni">
+                                                        <div class="conteinre-bottoni-azioni">
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="thover">
+                                                    <td class="colonna-nome">
+                                                        <img src="img/class-avatar.jpg" alt="">
+                                                        <h6>classe 77</h6>
+                                                    </td>
+                                                    <td class="colonna-stato">
+                                                        <button type="button" class="btn btn-warning" id="process">process</button>
+                            
+                                                    </td>
+                                                    <td class="colonna-azioni">
+                                                        <div class="conteinre-bottoni-azioni">
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="thover">
+                                                    <td class="colonna-nome">
+                                                        <img src="img/class-avatar.jpg" alt="">
+                                                        <h6>classe 78</h6>
+                                                    </td>
+                                                    <td class="colonna-stato">
+                                                        <button type="button" class="btn btn-success">Done</button>
+                            
+                                                    </td>
+                                                    <td class="colonna-azioni">
+                                                        <div class="conteinre-bottoni-azioni">
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="thover">
+                                                    <td class="colonna-nome">
+                                                        <img src="img/class-avatar.jpg" alt="">
+                                                        <h6>classe 79</h6>
+                                                    </td>
+                                                    <td class="colonna-stato">
+                                                        <button type="button" class="btn btn-danger">failed</button>
+                            
+                                                    </td>
+                                                    <td class="colonna-azioni">
+                                                        <div class="conteinre-bottoni-azioni">
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="thover">
+                                                    <td class="colonna-nome">
+                                                        <img src="img/class-avatar.jpg" alt="">
+                                                        <h6>classe 80</h6>
+                                                    </td>
+                                                    <td class="colonna-stato">
+                                                        <button type="button" class="btn btn-success">Done</button>
+                                                    </td>
+                                                    <td class="colonna-azioni">
+                                                        <div class="conteinre-bottoni-azioni">
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="thover">
+                                                    <td class="colonna-nome">
+                                                        <img src="img/class-avatar.jpg" alt="">
+                                                        <h6>classe 81</h6>
+                                                    </td>
+                                                    <td class="colonna-stato">
+                                                        <button type="button" class="btn btn-danger">failed</button>
+                            
+                                                    </td>
+                                                    <td class="colonna-azioni">
+                                                        <div class="conteinre-bottoni-azioni">
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="thover">
+                                                    <td class="colonna-nome">
+                                                        <img src="img/class-avatar.jpg" alt="">
+                                                        <h6>classe 82</h6>
+                                                    </td>
+                                                    <td class="colonna-stato">
+                                                        <button type="button" class="btn btn-success">Done</button>
+                            
+                                                    </td>
+                                                    <td class="colonna-azioni">
+                                                        <div class="conteinre-bottoni-azioni">
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                                                            <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                        
+                                        </tbody>
+                                        </div>
+                                    </table>
+                                </div>
+                        </div>
+                        <!-- faq section  -->
+
+                        <div class="total-faq-contain col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                            <div class="titolo-card col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                                <!-- titolo delle card del main  -->
+                                <h3>F.A.Q</h3>
+                            </div>
+                            <div class="faq-item-contain">
+                                <div class="faq-item col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                                    <p class="d-grid gap-1">
+                                        <button class="btn text-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                          come aggiungere un nuovo studente?
+                                          <!-- freccia delle faq  -->
+                                        </button>
+                                    </p>
+                                    <div class="collapse" id="collapse1">
+                                        <div class="card card-body">
+                                          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="faq-item faq-item-mid col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                                    <p class="d-grid gap-1">
+                                        <button class="btn text-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                          Come posso accedere alle informazini del mio account ?
+                                          <!-- freccia delle faq  -->
+                                        </button>
+                                    </p>
+                                    <div class="collapse" id="collapse2">
+                                        <div class="card card-body">
+                                          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="faq-item col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                                    <p class="d-grid gap-1">
+                                        <button class="btn text-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                          Posso usare questa dashboard da mobile ?
+                                          <!-- freccia delle faq  -->
+                                        </button>
+                                    </p>
+                                    <div class="collapse" id="collapse3">
+                                        <div class="card card-body">
+                                          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
+                            <!-- todo section  -->
+                            <div class="todo-total-contain col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                                <div class="titolo-card">
+                                    <!-- titolo delle card del main  -->
+                                    <h3>Todo</h3>
+                                </div>
+                                <!-- container intramente (no framework) creato per dare una larghezza in % al blocco todo con i radio -->
+                                <div class="todo-container">
+                                    <!-- il form checks che andro a mettere dovra essere modficato graficamente con (bordi come se fossero celle) -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                          kickoff nuove classi
+                                        </label>
+                                      </div>
+                                      <div class="form-check mid-todo">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                        <label class="form-check-label" for="flexCheckChecked">
+                                          lezione su bootstrap 5 in classe #75
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                        <label class="form-check-label" for="flexCheckChecked">
+                                            controllare username github studenti
+                                        </label>
+                                      </div>
+                                </div>
+                            </div>
+                            <!-- sezione grafico  -->
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 debug9">
+                                <div class="card">
+                                    <img src="img/stats.jpeg" class="card-img-top" alt="">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Utenti attivi</h5>
+                                      <p class="card-text">Lista degli utenti attivi in piattaforma nell'ultimo mese</p>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                      <li class="list-group-item">Gennaio 1200</li>
+                                      <li class="list-group-item">Febbraio 800</li>
+                                      <li class="list-group-item">Marzo 1500</li>
+                                    </ul>
+                                    <div class="card-body">
+                                      <a href="#" class="card-link">Visualizza report approfondito</a>
+                                    </div>
+                                  </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
+

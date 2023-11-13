@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* nav bar inziale alta lunga  */
+.nav-section{
+    height: 9vh;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+
+}
+.ricerca{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.ricerca input{
+   width: 100%;
+   border:none;
+   padding:10px;
+   background-color: gainsboro;
+   border-top-right-radius: 9px;
+   border-bottom-right-radius: 9px;
+}
+.ricerca i{
+    font-size:22px;
+    margin-left: 20px;
+    padding:11px 5px;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    background-color: gainsboro;
+}
+.logo-desk img{
+    margin-right: 10px;
+}
+.logo-mobile img{
+    width: 70px;
+
+    
+}
+
+.lista-icone-navdesk a{
+    color: rgb(128, 128, 128);;
+    padding:0 5px;
+    font-size:20px;
+}
+.fa-bell{
+    color: goldenrod;
+    font-size: 25px;
+}
+
+
+
+/* main  */
+/* parte della sidebar laterale  */
+.sidebar{
+    background-color: #051e34;
+    border: solid 1px;
+    height: 91vh;
+}
+.sidebar-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top:30px;
+    padding-bottom:50px;
+    height: 91vh;
+}
+.icon-start{
+    width: 100%;
+}
+.lista-sidebar{
+    list-style-type: none;
+    width: 100%;
+    margin: 0;
+    padding:0;
+
+}
+.lista-sidebar li{
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    color: white;
+    padding-top: 10px;
+
+}
+.lista-sidebar li:hover{
+    background-color: rgba(255, 255, 255, 0.52);
+}
+.lista-sidebar h6{
+    font-size: 20px;
+} 
+.icon-start-mob{
+    width: 100%;
+}
+.mobile-list-icon{
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    color: white;
+    font-size: 20px;
+}
+.icon-end i{
+    font-size: 20px;
+    color: white;
+}
+/* sezione intro  */
+/* blocco 1 delle info desk  */
+.blocco-1{
+    display: flex;
+    justify-content: start;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.blocco-2{
+    display: flex;
+    justify-content: start;
+}
+.buttone-fake{
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+.buttone-fake a{
+    color: white;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.423);
+    font-size: 13px;
+    padding: 0 5px;
+    border-radius:15px;
+}
+.intro-section-blue{
+     background-color:#1b72e8; 
+    border:1px solid;
+    color: white;
+}
+.info-2{
+    margin-top:20px;
+    padding-bottom: 30px;
+}
+.info-3{
+    margin-top:20px;
+    margin-right: 50px;
+}
+.new-student-blocco{
+    display: flex;
+    align-items: center;
+}
+.plus i{
+    color: white;
+}
+.intro-desk{
+    display: flex;
+    justify-content: space-between;
+}
+/* titolo card princpiali  */
+.titolo-card{
+    border-bottom: 1px solid rgb(192, 190, 190);
+    background-color: rgba(220, 220, 220, 0.252);
+    padding-top:5px;
+    padding-left:15px;
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+.card-principal{
+    margin-top:20px;
+    border:1px solid rgb(192, 190, 190);
+    border-radius:5px;
+    margin-bottom: 20px;
+}
+.titolo-card{
+    margin-top:0;
+}
+.tabella-classi-mobile, .tabella-classi-desk{
+    width: 90%;
+    margin: 0 auto;
+}
+.colonna-nome h6{
+    margin: 0;
+    display: flex;
+    align-self: center;
+
+}
+.colonna-data h6, .colonna-roi h6{
+    margin-top: 10px;
+}
+    /* specifiche tabella  */
+    .colonna-nome{
+        display: flex;
+    }
+    .colonna-nome img{
+        width: 40px;
+    }
+
+/* sezione faq */
+.total-faq-contain{
+    border:1px solid rgb(192, 190, 190);
+    border-radius: 5px;
+}
+.faq-item-contain{
+    width: 95%;
+    margin: 0 auto;
+}
+.faq-item-mid{
+    border-top:1px solid rgb(192, 190, 190);
+    border-bottom: 1px solid rgb(192, 190, 190);
+}
+
+
+/* sezione todo  */
+.todo-total-contain{
+    margin-top: 20px;
+    border:1px solid rgb(192, 190, 190);
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+.todo-container{
+    width: 90%;
+    margin: 10px auto;
+    border:1px solid rgb(192, 190, 190);
+    
+   
+}
+.mid-todo{
+    border-top:1px solid rgb(192, 190, 190);
+    border-bottom: 1px solid rgb(192, 190, 190);
+}
+
+
